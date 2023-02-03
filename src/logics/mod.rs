@@ -5,3 +5,4 @@ pub mod statements_expressions;
 pub mod functions_closures;
 pub mod generics;
 pub mod traits;
+pub mod macros;
