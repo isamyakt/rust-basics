@@ -17,10 +17,24 @@ pub fn macros() {
 
 
 
-#[derive(Default)]
+// #[derive(Default)]
 struct MyType {
     name: String,
     items: Vec<i32>,
+}
+
+// use anyone: 
+// #[derive(Default)] 
+//        OR
+// impl Default for MyType
+
+impl Default for MyType {
+    fn default() -> Self {
+        Self {
+            name: Default::default(),
+            items: Default::default(),
+        }
+    }
 }
 
 pub fn my_type() {
