@@ -17,3 +17,14 @@ fn print_string_stack_data(value: &String) {
     println!("capacity {0:16} 0x{0:016X}", unsafe { *ptr.offset(1) });
     println!("length   {0:16} 0x{0:016X}", unsafe { *ptr.offset(2) });
 }
+
+
+
+// Borrowing 
+pub fn borrowing() {
+    let owner = 17; 
+    let borrow = &owner;
+
+    println!("ownership: {}", owner);
+    println!(borrowing: {}", borrow);
+}
