@@ -26,5 +26,29 @@ pub fn borrowing() {
     let borrow = &owner;
 
     println!("ownership: {}", owner);
-    println!(borrowing: {}", borrow);
+    println!("borrowing: {}", borrow);
+}
+
+
+// Copy and Clone
+pub fn copy_clone() {
+    let a = String::from("a");
+    let b = a;
+    // String types, which does not implement the Copy trait
+    // println!("a = {a}");  // error because 'a' moves its value to 'b'.
+    println!("a = {b}");
+
+
+    let a = 10;
+    let b = a;
+    // Integer types, which allow to implement the Copy trait
+    println!("a = {a}");
+    println!("a = {b}");
+
+
+    // Сopy Implemention with clone
+    let a = String::from("a");
+    let b = a.clone(); // Explicitly create a duplicate.
+    println!("a = {a}");
+    println!("a = {b}");
 }
