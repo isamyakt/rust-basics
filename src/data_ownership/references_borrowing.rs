@@ -21,3 +21,15 @@ pub fn main_fn_error() {
     let len = length_of_string(s2);
     println!("The length of {s1:?} is {len}.");
 }
+
+// You do have to realize that cloning the String comes with a small
+// performance cost. You need to allocate a new stringand copy
+// the bytes over. Besides that, perhaps, more importantly,
+// you can now do things that make the output incorrect
+pub fn main_fn_incorrect_output() {
+    let mut s1 = String::from("Hey there!");
+    let s2 = s1.clone();
+    s1.push_str(" How are you?");
+    let len = length_of_string(s1);
+    println!("The length of {s2:?} is {len}.");
+}
