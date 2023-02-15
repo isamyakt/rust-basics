@@ -33,3 +33,15 @@ pub fn main_fn_incorrect_output() {
     let len = length_of_string(s1);
     println!("The length of {s2:?} is {len}.");
 }
+
+
+// mutable reference
+pub fn append_world(value: &mut String) {
+    value.push_str(", World!")
+}
+
+pub fn append_world_main() {
+    let mut s1 = String::from("Hello");
+    append_world(&mut s1);
+    println!("The value is now {s1:?}.");
+}
